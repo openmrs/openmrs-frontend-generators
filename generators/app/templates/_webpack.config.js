@@ -3,12 +3,12 @@ const CleanWebpackPlugin = require("clean-webpack-plugin").CleanWebpackPlugin;
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 module.exports = {
-  entry: path.resolve(__dirname, "src/openmrs-esm-login.tsx"),
+  entry: path.resolve(__dirname, "src/<%= dashedName %>.tsx"),
   output: {
-    filename: "openmrs-esm-login.js",
+    filename: "<%= dashedName %>.js",
     libraryTarget: "system",
     path: path.resolve(__dirname, "dist"),
-    jsonpFunction: "webpackJsonp_openmrs_esm_login"
+    jsonpFunction: "webpackJsonp_<%= underscoredName %>"
   },
   module: {
     rules: [

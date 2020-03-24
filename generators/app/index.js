@@ -2,7 +2,11 @@ var Generator = require("yeoman-generator");
 const chalk = require("chalk");
 const R = require("ramda");
 
-const extend = R.unapply(R.merge)
+const extend = R.unapply(R.mergeAll)
+
+function dashedName(name) {
+    return name.replace('@', '').replace(/\//, '-');
+}
 
 module.exports = class extends Generator {
   constructor(args, options) {
@@ -11,28 +15,35 @@ module.exports = class extends Generator {
     this.composeWith(require.resolve("generator-node/generators/app"), {
       boilerplate: false,
       projectRoot: "src",
-      license: true
+      license: false
     });
   }
 
   initializing() {
     this.log("Welcome to the " + chalk.yellow("OpenMRS ESM") + " generator!");
+    
   }
 
   prompting() {}
 
-  configuring() {}
-
-  default() {}
-
-  conflicts() {  // to go after generator-node.writing
-    this.log(this.repositoryName);
-    const currentPkg = this.fs.readJSON(
-      this.destinationPath("package.json"),
-      {}
-    );
-    const openmrsPkg = this.fs.readJSON(this.templatePath("_package.json"));
-    const pkg = extend(openmrsPkg, currentPkg);
-    this.fs.writeJSON(this.destinationPath('package.json'), pkg);
+  configuring() {
+      this.props = this._composedWith[0].props;
+      this.props.dashedName = dashedName(this.props.name);
+      this.log(this.props);
+      this.fs.copyTpl(this.templatePath("_package.json"), this.destinationPath("package.json"), {
+        dashedName: this.props.dashedName,
+        account: this.props.account,
+        localName: this.props.localName
+    })
   }
+
+  default() {
+      this.fs.copy(this.templatePath('_jest.config.json'), this.destinationPath("jest.config.json"))
+      this.fs.copy(this.templatePath('_tsconfig.json'), this.destinationPath("tsconfig.json"))
+      this.fs.copyTpl(this.templatePath('_webpack.config.js'), this.destinationPath("webpack.js"), {
+          dashedName: this.props.dashedName,
+          underscoredName: this.props.dashedName.replace(/-/, "_")
+      })
+  }
+
 };

@@ -8,10 +8,10 @@
         "type": "node",
         "request": "launch",
         "name": "yeoman openmrs",
-        "program": "/home/brandon/.npm-global/bin/yo",
+        "program": "${env:HOME}/.npm-global/bin/yo",
         "args": [ "openmrs" ],
         "stopOnEntry": true,
-        "cwd": "${workspaceRoot}",
+        "cwd": "${workspaceRoot}/../openmrs-gen-test",
         "console": "integratedTerminal",
         "internalConsoleOptions": "neverOpen"
     } 

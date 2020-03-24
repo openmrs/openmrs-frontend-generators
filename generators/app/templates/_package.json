@@ -1,5 +1,5 @@
 {
-  "main": "dist/<=% dashedName %>.js",
+  "main": "dist/<%= dashedName %>.js",
   "directories": {
     "lib": "dist"
   },
@@ -24,12 +24,12 @@
   "types": "src/<%= dashedName %>.d.tsx",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/openmrs/<%= dashedName %>.git"
+    "url": "git+https://github.com/<%= account %>/<%= localName %>.git"
   },
   "bugs": {
-    "url": "https://github.com/openmrs/<%= dashedName %>/issues"
+    "url": "https://github.com/<%= account %>/<%= localName %>/issues"
   },
-  "homepage": "https://github.com/openmrs/<%= dashedName %>#readme",
+  "homepage": "https://wiki.openmrs.org/display/projects/<%= dashedName %>",
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
