@@ -11,7 +11,7 @@
         "program": "${env:HOME}/.npm-global/bin/yo",
         "args": [ "openmrs" ],
         "stopOnEntry": true,
-        "cwd": "${workspaceRoot}/../openmrs-gen-test",
+        "cwd": "${workspaceRoot}/../openmrs-esm-gen-test",
         "console": "integratedTerminal",
         "internalConsoleOptions": "neverOpen"
     } 

@@ -1,7 +1,3 @@
 {
-  "confirm": "Confirm",
-  "location": "Location",
-  "login": "Login",
-  "password": "Password",
-  "username": "Username"
+  "hello-from": "Hello from"
 }

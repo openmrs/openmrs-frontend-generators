@@ -8,7 +8,6 @@
     "start-https": "webpack-dev-server --https",
     "build": "webpack --mode production",
     "lint": "eslint src --ext tsx",
-    "prettier": "prettier",
     "typescript": "tsc",
     "prepublishOnly": "npm run build",
     "test": "jest --config jest.config.json"
@@ -24,10 +23,10 @@
   "types": "src/<%= dashedName %>.d.tsx",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/<%= account %>/<%= localName %>.git"
+    "url": "git+https://github.com/<%= githubAccount %>/<%= localName %>.git"
   },
   "bugs": {
-    "url": "https://github.com/<%= account %>/<%= localName %>/issues"
+    "url": "https://github.com/<%= githubAccount %>/<%= localName %>/issues"
   },
   "homepage": "https://wiki.openmrs.org/display/projects/<%= dashedName %>",
   "devDependencies": {
@@ -55,6 +54,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "fork-ts-checker-webpack-plugin": "^1.6.0",
     "husky": "^2.7.0",
+    "identity-obj-proxy": "^3.0.0",
     "i18next": "^19.1.0",
     "jest": "^24.9.0",
     "jest-cli": "^24.9.0",

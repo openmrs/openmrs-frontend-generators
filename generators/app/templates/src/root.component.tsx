@@ -16,7 +16,7 @@ defineConfigSchema("<%= name %>", {
 function Root(props) {
   return (
     <BrowserRouter basename={window["getOpenmrsSpaBase"]()}>
-      <Route path="/<%= dashedFeatureName %>" component={<%= componentName %>>} />
+      <Route path="/<%= dashedFeatureName %>" component={<%= componentName %>} />
     </BrowserRouter>
   );
 }
