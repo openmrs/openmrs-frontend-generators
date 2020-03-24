@@ -1,4 +1,4 @@
 export const backendDependencies = {
-  "webservices.rest": "2.24.0",
-  appui: "1.10.0"
+  /* Put the OpenMRS modules that this ESM depends on here, e.g. */
+  /* "webservices.rest": "2.24.0" */
 };

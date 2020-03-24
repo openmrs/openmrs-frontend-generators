@@ -7,12 +7,13 @@ import Root from "./root.component";
 const lifecycles = singleSpaReact({
   React,
   ReactDOM,
-  rootComponent: Root
+  rootComponent: Root,
 });
 
 export const bootstrap = lifecycles.bootstrap;
 export const mount = lifecycles.mount;
 export const unmount = lifecycles.unmount;
+export { backendDependencies } from "./openmrs-backend-dependencies";
 
 export const importTranslation = require.context(
   "../translations",
