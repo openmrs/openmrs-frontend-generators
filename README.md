@@ -1,0 +1,2 @@
+# OpenMRS Yeoman Generator
+
