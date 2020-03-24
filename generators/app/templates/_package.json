@@ -1,0 +1,86 @@
+{
+  "main": "dist/<=% dashedName %>.js",
+  "directories": {
+    "lib": "dist"
+  },
+  "scripts": {
+    "start": "webpack-dev-server",
+    "start-https": "webpack-dev-server --https",
+    "build": "webpack --mode production",
+    "lint": "eslint src --ext tsx",
+    "prettier": "prettier",
+    "typescript": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "jest --config jest.config.json"
+  },
+  "browserslist": [
+    "extends browserslist-config-openmrs"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && concurrently 'npm:lint' 'npm:test' 'npm:typescript'"
+    }
+  },
+  "types": "src/<%= dashedName %>.d.tsx",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openmrs/<%= dashedName %>.git"
+  },
+  "bugs": {
+    "url": "https://github.com/openmrs/<%= dashedName %>/issues"
+  },
+  "homepage": "https://github.com/openmrs/<%= dashedName %>#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "@openmrs/react-root-decorator": "^3.2.0",
+    "@testing-library/jest-dom": "^5.0.2",
+    "@testing-library/react": "^9.4.0",
+    "@types/jest": "^24.9.1",
+    "@typescript-eslint/parser": "^2.18.0",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-i18next-extract": "^0.6.1",
+    "browserslist-config-openmrs": "^1.0.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^5.1.0",
+    "css-loader": "^3.4.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-ts-react-important-stuff": "^2.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "fork-ts-checker-webpack-plugin": "^1.6.0",
+    "husky": "^2.7.0",
+    "i18next": "^19.1.0",
+    "jest": "^24.9.0",
+    "jest-cli": "^24.9.0",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^1.11.1",
+    "react-i18next": "^11.3.1",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "single-spa-react": "^2.11.0",
+    "style-loader": "^1.1.3",
+    "systemjs-webpack-interop": "^1.1.2",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "dependencies": {
+    "@openmrs/esm-api": "^1.2.2",
+    "@openmrs/esm-error-handling": "^1.1.0",
+    "@openmrs/esm-module-config": "^1.1.1",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@types/systemjs": "^6.1.0",
+    "@types/webpack-env": "^1.15.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "rxjs": "^6.5.4"
+  }
+}
