@@ -4,12 +4,17 @@
   "description": "A helper for creating OpenMRS single-spa projects",
   "author": "Brandon Istenes <bistenes@pih.org>",
   "license": "OpenMRS <https://openmrs.org/license/>",
-  "keywords": ["yeoman-generator"],
+  "keywords": [
+    "yeoman-generator"
+  ],
   "main": "src/generator-openmrs.js",
   "files": [
     "src"
   ],
   "scripts": {
     "test": "jest --testPathIgnorePatterns templates"
+  },
+  "dependencies": {
+    "generator-single-spa": "^1.3.3"
   }
 }

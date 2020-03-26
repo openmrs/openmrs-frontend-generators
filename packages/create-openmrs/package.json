@@ -6,5 +6,10 @@
   "license": "OpenMRS <https://openmrs.org/license/>",
   "bin": {
     "create-openmrs": "bin/create-openmrs.js"
+  },
+  "dependencies": {
+    "generator-openmrs": "../generator-openmrs",
+    "yargs": "^15.3.1",
+    "yeoman-environment": "^2.8.1"
   }
 }
