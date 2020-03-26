@@ -1,0 +1,10 @@
+{
+  "name": "create-openmrs",
+  "version": "0.0.0",
+  "description": "Wrapper for generator-openmrs",
+  "author": "Brandon Istenes <bistenes@pih.org>",
+  "license": "OpenMRS <https://openmrs.org/license/>",
+  "bin": {
+    "create-openmrs": "bin/create-openmrs.js"
+  }
+}
