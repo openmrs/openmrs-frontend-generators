@@ -1,8 +1,6 @@
 language: node_js
 node_js:
   - node
-cache:
-  yarn: true
 script:
-  - yarn run lerna bootstrap --ci
-  - yarn run lerna run test
+  - npm run lerna bootstrap --ci
+  - npm run lerna run test
