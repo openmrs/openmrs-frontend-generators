@@ -1,7 +1,12 @@
 {
-  "name": "root",
+  "name": "openmrs-frontend-generators",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
+    "@types/node": "^14.0.4",
+    "typescript": "^3.9.3",
     "lerna": "^3.20.2"
   }
 }
