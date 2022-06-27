@@ -1,4 +1,11 @@
-# OpenMRS Generators
+# Deprecated
+
+These have been abandoned. The current recommended way to create a new frontend module
+is by cloning [openmrs-esm-template-app](https://github.com/openmrs/openmrs-esm-template-app).
+
+# Old Documentation
+
+## OpenMRS Generators
 
 Implementation plan, from Joel Denning:
 
